@@ -132,7 +132,6 @@
 				AA1AFF582104DF4200E355E1 /* Assets.xcassets */,
 				AA1AFF5A2104DF4200E355E1 /* LaunchScreen.storyboard */,
 				AA1AFF5D2104DF4200E355E1 /* Info.plist */,
-				AA7EFB50210777E900A6552B /* UIImageView.swift */,
 			);
 			path = SampleNetwork;
 			sourceTree = "<group>";
@@ -160,6 +159,7 @@
 			children = (
 				AA939F242133E002001FD487 /* UIViewController.swift */,
 				AA939F262133E01F001FD487 /* UIColor.swift */,
+				AA7EFB50210777E900A6552B /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
