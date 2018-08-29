@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Verdana.ttf">
+            <string>Verdana</string>
+        </array>
+        <array key="VerdanaBold.ttf">
+            <string>Verdana-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HomeTableViewCell" customModule="SampleNetwork" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehb-XC-YgT">
+                    <rect key="frame" x="16" y="10" width="343" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="WJr-lV-wlu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="16"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayh-UV-BKT">
+                    <rect key="frame" x="16" y="41" width="343" height="49"/>
+                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ehb-XC-YgT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="3aV-PG-fOP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ayh-UV-BKT" secondAttribute="bottom" constant="10" id="8QS-2a-gKd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ehb-XC-YgT" secondAttribute="trailing" constant="16" id="IQ7-fZ-M4d"/>
+                <constraint firstItem="ayh-UV-BKT" firstAttribute="top" secondItem="ehb-XC-YgT" secondAttribute="bottom" constant="10" id="OKS-bG-mJv"/>
+                <constraint firstItem="ayh-UV-BKT" firstAttribute="trailing" secondItem="ehb-XC-YgT" secondAttribute="trailing" id="Qhg-6y-HLe"/>
+                <constraint firstItem="ayh-UV-BKT" firstAttribute="leading" secondItem="ehb-XC-YgT" secondAttribute="leading" id="jY7-Ls-K4s"/>
+                <constraint firstItem="ehb-XC-YgT" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="tty-pF-rAn"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="ayh-UV-BKT" id="oFg-gK-03M"/>
+                <outlet property="titleLabel" destination="ehb-XC-YgT" id="A0Y-tn-Qg1"/>
+            </connections>
+            <point key="canvasLocation" x="80.5" y="142"/>
+        </view>
+    </objects>
+</document>
