@@ -15,7 +15,7 @@ class HomeTableViewModel {
     init() {}
     
     func getItemsFromRequest(completion: @escaping (Bool) -> Void) {
-        API.requestArray(route: .getPostsBy(userId: 1), success: {
+        API.requestArray(route: .getPosts, success: {
             (response: [Post]) in
             self.items = response
             completion(true)
