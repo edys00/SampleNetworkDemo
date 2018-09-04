@@ -216,20 +216,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wok-Fm-Yy9">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="76" width="375" height="542"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="nxc-CR-43K" id="c6T-7Y-Nab"/>
                                     <outlet property="delegate" destination="nxc-CR-43K" id="23B-el-K0E"/>
                                 </connections>
                             </tableView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progressImage="swift_logo" translatesAutoresizingMaskIntoConstraints="NO" id="g3c-RA-Znd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="CZQ-Io-Uo5"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.10196078431372549" green="0.73725490196078436" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OK-f6-FZA">
+                                <rect key="frame" x="188" y="64" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wok-Fm-Yy9" firstAttribute="top" secondItem="IO1-Tj-dVa" secondAttribute="top" id="5or-cz-aEj"/>
+                            <constraint firstItem="wok-Fm-Yy9" firstAttribute="top" secondItem="IO1-Tj-dVa" secondAttribute="top" constant="12" id="5or-cz-aEj"/>
+                            <constraint firstItem="0OK-f6-FZA" firstAttribute="centerX" secondItem="bvs-ng-roB" secondAttribute="centerX" id="Gme-fS-q6U"/>
                             <constraint firstItem="wok-Fm-Yy9" firstAttribute="leading" secondItem="IO1-Tj-dVa" secondAttribute="leading" id="TeY-sg-NNx"/>
                             <constraint firstItem="IO1-Tj-dVa" firstAttribute="bottom" secondItem="wok-Fm-Yy9" secondAttribute="bottom" id="UpS-x6-q16"/>
                             <constraint firstAttribute="trailing" secondItem="wok-Fm-Yy9" secondAttribute="trailing" id="bsb-Gh-1Gq"/>
+                            <constraint firstItem="g3c-RA-Znd" firstAttribute="leading" secondItem="bvs-ng-roB" secondAttribute="leading" id="crg-Gn-TTW"/>
+                            <constraint firstItem="0OK-f6-FZA" firstAttribute="top" secondItem="g3c-RA-Znd" secondAttribute="top" id="h9L-Q7-tYq"/>
+                            <constraint firstAttribute="trailing" secondItem="g3c-RA-Znd" secondAttribute="trailing" id="jRS-YI-dTn"/>
+                            <constraint firstItem="g3c-RA-Znd" firstAttribute="top" secondItem="IO1-Tj-dVa" secondAttribute="top" id="toH-qz-lUr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IO1-Tj-dVa"/>
                     </view>
@@ -246,12 +264,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="progressLabel" destination="0OK-f6-FZA" id="D8o-Tv-arZ"/>
+                        <outlet property="progressView" destination="g3c-RA-Znd" id="xW5-Y3-kUU"/>
                         <outlet property="toDoListTableView" destination="wok-Fm-Yy9" id="dU7-Ag-fiy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9o-CC-oaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="665" y="1164"/>
+            <point key="canvasLocation" x="664.79999999999995" y="1163.568215892054"/>
         </scene>
         <!--GRID-->
         <scene sceneID="0Na-lu-Zm5">
@@ -386,4 +406,7 @@
             <point key="canvasLocation" x="-47" y="1165"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="swift_logo" width="100" height="100"/>
+    </resources>
 </document>

@@ -12,6 +12,8 @@ import UIKit
 class HomeToDoListViewController: UIViewController {
     
     @IBOutlet weak var toDoListTableView: UITableView!
+    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var progressLabel: UILabel!
     
     var toDoLists = [(String, Bool)]()
     
@@ -31,6 +33,20 @@ class HomeToDoListViewController: UIViewController {
         gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         view.layer.addSublayer(gradientLayer)
         view.bringSubview(toFront: toDoListTableView)
+        view.bringSubview(toFront: progressView)
+        view.bringSubview(toFront: progressLabel)
+    }
+    
+    func updateProgressView() {
+        if toDoLists.count == 0 {
+            progressView.setProgress(0.0, animated: true)
+            progressLabel.text = ""
+            return
+        }
+        let completedList = toDoLists.filter { $0.1 == true }
+        let progress = Float(completedList.count) / Float(toDoLists.count)
+        progressView.setProgress(progress, animated: true)
+        progressLabel.text = "\(Int(progress * 100))%"
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
@@ -59,6 +75,7 @@ class HomeToDoListViewController: UIViewController {
             if inputText.count > 0 {
                 self.toDoLists.append((inputText, false))
                 self.toDoListTableView.reloadData()
+                self.updateProgressView()
             }
         })
         alertController.addAction(addAction)
@@ -105,6 +122,7 @@ extension HomeToDoListViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         toDoLists[indexPath.row].1 = !toDoLists[indexPath.row].1
         tableView.reloadData()
+        updateProgressView()
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -115,6 +133,7 @@ extension HomeToDoListViewController: UITableViewDelegate, UITableViewDataSource
         if editingStyle == .delete && tableView.isEditing {
             toDoLists.remove(at: indexPath.row)
             tableView.reloadData()
+            self.updateProgressView()
         }
     }
     
